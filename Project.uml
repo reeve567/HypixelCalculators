@@ -93,10 +93,8 @@
       <point x="-60.0" y="49.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Compact" zoom="1.3789571457654726" showDependencies="true" x="488.89909111879814" y="575.5205997693224" />
-  <SelectedNodes>
-    <node>dev.reeve.pages.PageBuilder</node>
-  </SelectedNodes>
+  <settings layout="Hierarchic Compact" zoom="1.3789571457654726" showDependencies="true" x="468.5938915801601" y="410.88116262976183" />
+  <SelectedNodes />
   <Categories>
     <Category>Constructors</Category>
     <Category>Fields</Category>

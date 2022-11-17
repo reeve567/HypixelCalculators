@@ -1,0 +1,36 @@
+{
+	"minions": [
+		{
+			"id": "COBBLESTONE",
+			"drops": {
+				"COBBLESTONE": {
+					"min": 1,
+					"max": 1,
+					"chance": 1.0
+				}
+			},
+			"tiers": [
+				{
+					"cooldown": 14,
+					"storage": 64
+				},
+				{
+					"cooldown": 14,
+					"storage": 192
+				},
+				{
+					"cooldown": 12,
+					"storage": 192
+				},
+				{
+					"cooldown": 12,
+					"storage": 384
+				},
+				{
+					"cooldown": 10,
+					"storage": 384
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>dev.reeve.pages.PageBuilder</OriginalElement>
+  <nodes>
+    <node x="315.5" y="72.5">dev.reeve.pages.Header</node>
+    <node x="29.5" y="272.5">dev.reeve.api.Profile.CommunityUpgrade</node>
+    <node x="-102.5" y="841.0">dev.reeve.api.HypixelAPI</node>
+    <node x="268.5" y="239.5">dev.reeve.api.IslandMember</node>
+    <node x="-130.0" y="283.5">dev.reeve.api.Profile.Banking</node>
+    <node x="101.0" y="-116.0">dev.reeve.pages.HtmlComponent</node>
+    <node x="197.0" y="506.5">dev.reeve.api.Item</node>
+    <node x="-125.5" y="72.5">dev.reeve.pages.PageBuilder</node>
+    <node x="147.5" y="61.0">dev.reeve.pages.NavigationBar</node>
+    <node x="-132.5" y="528.5">dev.reeve.api.Profile</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="dev.reeve.api.HypixelAPI" target="dev.reeve.api.Profile" relationship="DEPENDENCY">
+      <point x="0.0" y="-61.0" />
+      <point x="0.0" y="93.5" />
+    </edge>
+    <edge source="dev.reeve.pages.PageBuilder" target="dev.reeve.pages.HtmlComponent" relationship="TO_MANY">
+      <point x="0.0" y="-49.5" />
+      <point x="1.0" y="42.0" />
+      <point x="141.0" y="42.0" />
+      <point x="-40.0" y="38.0" />
+    </edge>
+    <edge source="dev.reeve.api.Profile.CommunityUpgrade" target="dev.reeve.api.Profile" relationship="INNER_CLASS">
+      <point x="-54.333333333333314" y="49.5" />
+      <point x="86.66666666666669" y="462.0" />
+      <point x="21.0" y="462.0" />
+      <point x="0.0" y="-93.5" />
+    </edge>
+    <edge source="dev.reeve.pages.Header" target="dev.reeve.pages.HtmlComponent" relationship="REALIZATION">
+      <point x="0.0" y="-49.5" />
+      <point x="401.0" y="42.0" />
+      <point x="221.0" y="42.0" />
+      <point x="40.0" y="38.0" />
+    </edge>
+    <edge source="dev.reeve.api.Profile" target="dev.reeve.api.IslandMember" relationship="TO_MANY">
+      <point x="100.0" y="-93.5" />
+      <point x="121.0" y="442.0" />
+      <point x="401.0" y="442.0" />
+      <point x="0.0" y="82.5" />
+    </edge>
+    <edge source="dev.reeve.api.Profile" target="dev.reeve.api.Profile.Banking" relationship="TO_ONE">
+      <point x="100.0" y="-93.5" />
+      <point x="121.0" y="442.0" />
+      <point x="1.6666666666666572" y="442.0" />
+      <point x="60.66666666666666" y="38.5" />
+    </edge>
+    <edge source="dev.reeve.api.Profile" target="dev.reeve.api.Profile.Banking" relationship="CREATE">
+      <point x="-100.0" y="-93.5" />
+      <point x="-79.0" y="502.0" />
+      <point x="-99.0" y="502.0" />
+      <point x="-40.0" y="38.5" />
+    </edge>
+    <edge source="dev.reeve.api.Profile.Banking" target="dev.reeve.api.Profile" relationship="INNER_CLASS">
+      <point x="40.0" y="38.5" />
+      <point x="-19.0" y="462.0" />
+      <point x="21.0" y="462.0" />
+      <point x="0.0" y="-93.5" />
+    </edge>
+    <edge source="dev.reeve.pages.NavigationBar" target="dev.reeve.pages.HtmlComponent" relationship="REALIZATION">
+      <point x="0.0" y="-61.0" />
+      <point x="40.0" y="38.0" />
+    </edge>
+    <edge source="dev.reeve.api.Profile" target="dev.reeve.api.Profile.CommunityUpgrade" relationship="TO_MANY">
+      <point x="100.0" y="-93.5" />
+      <point x="121.0" y="442.0" />
+      <point x="201.0" y="442.0" />
+      <point x="60.0" y="49.5" />
+    </edge>
+    <edge source="dev.reeve.api.HypixelAPI" target="dev.reeve.api.Item" relationship="DEPENDENCY">
+      <point x="0.0" y="-61.0" />
+      <point x="21.0" y="802.0" />
+      <point x="361.0" y="802.0" />
+      <point x="0.0" y="115.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.7961783439490446" showDependencies="true" x="210.5" y="433.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

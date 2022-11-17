@@ -1,9 +1,10 @@
 package dev.reeve.api
 
-class IslandMember {
-	var personalBankUpgrade = 0
-	var coinPurse = 0.0
-	var craftedGenerators = mutableListOf<String>()
+data class IslandMember(
+	var personalBankUpgrade: Int = 0,
+	var coinPurse: Double = 0.0,
+	var craftedGenerators: MutableList<String> = mutableListOf()
+) {
 
 	fun getTopGenerators(): MutableMap<String, Int> {
 		val topGenerators = mutableMapOf<String, Int>()

@@ -7,26 +7,25 @@ import org.w3c.dom.Document
 
 class PageBuilder {
 	private val html = createHTMLDocument()
-	private var navigationBar = false
-	private var header: Header? = null
+	private val components = mutableListOf<HtmlComponent>()
 
-	fun addNavigationBar() {
-		navigationBar = true
-	}
-
-	fun addHeader(header: Header) {
-		this.header = header
+	fun addComponent(component: HtmlComponent) {
+		components.add(component)
 	}
 
 	fun build(): Document {
 		html.html {
 			head {
 				style {
-					header?.css(this)
+					components.forEach {
+						it.css(this)
+					}
 				}
 			}
 			body {
-				header?.html(this)
+				components.forEach {
+					it.html(this)
+				}
 			}
 		}
 

@@ -1,6 +1,16 @@
 package dev.reeve.pages
 
-class NavigationBar {
-	val title = "Hypixel Calculators"
+import kotlinx.html.BODY
+import kotlinx.html.STYLE
+
+class NavigationBar: HtmlComponent {
+	private val title = "Hypixel Calculators"
+	override fun html(body: BODY) = with(body) {
+
+	}
+
+	override fun css(style: STYLE) = with(style) {
+
+	}
 
 }

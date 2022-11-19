@@ -1,9 +1,8 @@
-package dev.reeve.api
+package dev.reeve.api.hypixel
 
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import java.util.UUID
 
 object HypixelAPI {
 	private lateinit var apiKey: String

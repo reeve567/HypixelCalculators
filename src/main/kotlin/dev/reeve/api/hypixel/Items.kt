@@ -1,4 +1,4 @@
-package dev.reeve.api
+package dev.reeve.api.hypixel
 
 data class Items(
 	var lastSaved: Long = 0,

@@ -1,4 +1,4 @@
-package dev.reeve.api
+package dev.reeve.api.hypixel
 
 import java.util.UUID
 

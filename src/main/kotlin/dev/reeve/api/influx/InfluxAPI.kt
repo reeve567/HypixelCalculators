@@ -1,10 +1,19 @@
 package dev.reeve.api.influx
 
-object InfluxAPI {
-	private lateinit var apiKey: String
-	private const val baseUrl = "https://influx.reeve.dev/"
+import com.influxdb.client.InfluxDBClient
+import com.influxdb.client.InfluxDBClientFactory
 
-	fun setApiKey(key: String) {
-		apiKey = key
+object InfluxAPI {
+	private lateinit var client: InfluxDBClient
+	fun setupConnection(apiKey: String, baseUrl: String, bucket: String, org: String) {
+		client = InfluxDBClientFactory.create(baseUrl, apiKey.toCharArray(), org, bucket)
+	}
+
+	fun test() {
+		client.queryApi
+	}
+
+	fun close() {
+		client.close()
 	}
 }

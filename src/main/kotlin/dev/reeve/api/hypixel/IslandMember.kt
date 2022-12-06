@@ -6,7 +6,7 @@ data class IslandMember(
 	var craftedGenerators: MutableList<String> = mutableListOf()
 ) {
 
-	fun getTopGenerators(): MutableMap<String, Int> {
+	fun getTopLevelGenerators(): MutableMap<String, Int> {
 		val topGenerators = mutableMapOf<String, Int>()
 		craftedGenerators.forEach { generator ->
 			val underScore = generator.indexOfLast { c -> c == '_' }

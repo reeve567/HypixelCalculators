@@ -1,0 +1,9 @@
+GET https://hypixel-skyblock.fandom.com/wiki/Minions
+Accept:  text/html
+
+###
+
+GET https://hypixel-skyblock.fandom.com/wiki/Ghast_Minion
+Accept:  text/html
+
+###

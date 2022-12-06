@@ -3,7 +3,7 @@ package dev.reeve.api.influx
 import com.influxdb.client.InfluxDBClient
 import com.influxdb.client.InfluxDBClientFactory
 
-object InfluxAPI {
+object InfluxAPI: AutoCloseable {
 	private lateinit var client: InfluxDBClient
 	fun setupConnection(apiKey: String, baseUrl: String, bucket: String, org: String) {
 		client = InfluxDBClientFactory.create(baseUrl, apiKey.toCharArray(), org, bucket)
@@ -13,7 +13,7 @@ object InfluxAPI {
 		client.queryApi
 	}
 
-	fun close() {
+	override fun close() {
 		client.close()
 	}
 }

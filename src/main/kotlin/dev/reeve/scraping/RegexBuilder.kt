@@ -2,7 +2,7 @@ package dev.reeve.scraping
 
 class RegexBuilder(block: RegexBuilder.() -> Unit = {}) {
 	private val regex = StringBuilder()
-	val nonQuoteSelector = "${getNonSelector("\"")}+"
+	val nonQuoteSelector = getNonSelector("\"").oneOrMore()
 	val whiteSpaceSelector = getNonCapturingGroup("\\s*")
 
 	init {
@@ -39,8 +39,15 @@ class RegexBuilder(block: RegexBuilder.() -> Unit = {}) {
 		add(nonQuoteSelector)
 	}
 
+	fun String.zeroOrMore(): String {
+		return "$this*"
+	}
+
+	fun String.oneOrMore(): String {
+		return "$this+"
+	}
+
 	fun build(): String {
-		println(regex.toString())
 		return regex.toString()
 	}
 }

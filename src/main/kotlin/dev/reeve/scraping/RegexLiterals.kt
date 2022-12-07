@@ -2,7 +2,8 @@ package dev.reeve.scraping
 
 object RegexLiterals {
 	val minionLinkRegex = Regex("/wiki/(?<name>.+)_Minion")
-	val minionIdRegex = Regex("<code>(?<id>.+)_GENERATOR")
+	val minionIdRegex = Regex("<code>(?<id>.+?)_GENERATOR")
+	val tableRegex = Regex("""<table class="wikitable">(.|\s)+?</table>""")
 	val minionDropsRegex = RegexBuilder {
 		add("<tr")
 		// the first drop has these classes applied, but the rest don't
@@ -16,8 +17,7 @@ object RegexLiterals {
 		addNonCapturingGroup(
 			"<td rowspan=\"${
 				getNamedGroup(
-					"count",
-					"\\d+"
+					"count", "\\d+"
 				)
 			}\">None</td>"
 		) // this is a group so that it can be optional
@@ -30,7 +30,7 @@ object RegexLiterals {
 		addWhiteSpaceSelector()
 
 		// they all have this
-		add("""<table class="wikitable table-margin-off full-width smalltxt>"""")
+		add("""<table class="wikitable table-margin-off full-width smalltxt">""")
 		addWhiteSpaceSelector()
 		add("<tbody>")
 		addWhiteSpaceSelector()
@@ -47,19 +47,29 @@ object RegexLiterals {
 		addWhiteSpaceSelector()
 		// chance, which could be in a couple different formats, so leaving that to code to handle
 		add(
-			"<tr>$whiteSpaceSelector<td>Chance</td>$whiteSpaceSelector<td>${
-				getNamedGroup("chance", getNonSelector("<"))
+			"<tr>$whiteSpaceSelector<td>Chance${
+				getNonCapturingGroup(getNonSelector("<").zeroOrMore())
+			}</td>$whiteSpaceSelector<td>${
+				getNamedGroup("chance", getNonSelector("<").zeroOrMore())
 			}</td>$whiteSpaceSelector</tr>"
 		)
 		addWhiteSpaceSelector()
 		add("</tbody>$whiteSpaceSelector</table>$whiteSpaceSelector</td>")
 
+		addWhiteSpaceSelector()
 		// this next part is just for display on the wiki, it isn't really important
 		add("""<td>(?:.|\s)+?</td>""")
 		addWhiteSpaceSelector()
 
 		// drop
-		add("""<td><a href="/wiki/${getNamedGroup("drop", nonQuoteSelector)}" title="${getNamedGroup("dropName", nonQuoteSelector)}">""")
+		add(
+			"""<td><a href="/wiki/${getNamedGroup("drop", nonQuoteSelector)}" title="${
+				getNamedGroup(
+					"dropName",
+					nonQuoteSelector
+				)
+			}">"""
+		)
 
 		//TODO: could add in the info for XP, but that would make things even more complicated
 

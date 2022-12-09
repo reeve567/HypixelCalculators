@@ -5,8 +5,7 @@ data class Minion(
 ) {
 
 	data class MinionDrop(
-		val min: Int,
-		val max: Int,
+		val average: Double,
 		val chance: Double,
 	)
 

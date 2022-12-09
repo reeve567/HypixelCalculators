@@ -58,6 +58,7 @@ object RegexLiterals {
 
 		addWhiteSpaceSelector()
 		// this next part is just for display on the wiki, it isn't really important
+		// TODO: Figure out why this causes a stack overflow
 		add("""<td>(?:.|\s)+?</td>""")
 		addWhiteSpaceSelector()
 
@@ -74,4 +75,5 @@ object RegexLiterals {
 		//TODO: could add in the info for XP, but that would make things even more complicated
 
 	}.build().toRegex()
+	// TODO: add npc price regex
 }

@@ -44,7 +44,21 @@ class MinionGrabber {
 
 		val matches = RegexLiterals.minionDropsRegex.findAll(body ?: return null)
 
+		TODO("Until the drops regex doesn't cause a stack overflow, it won't pass the line above")
 
+		val drops = mutableListOf<Minion.MinionDrop>()
+
+		for (match in matches) {
+			val dropName = match.groups["name"]?.value ?: continue
+			val dropChance = match.groups["chance"]?.value ?: continue
+			val dropAmount = match.groups["amount"]?.value ?: continue
+
+			if (dropAmount.contains("in")) {
+
+			} else if (dropAmount.contains("%")) {
+
+			}
+		}
 
 		return null
 	}

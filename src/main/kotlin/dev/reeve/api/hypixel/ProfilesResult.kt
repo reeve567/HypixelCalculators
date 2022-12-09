@@ -1,6 +1,5 @@
 package dev.reeve.api.hypixel
 
-data class Profiles(
-	var success: Boolean = false,
+data class ProfilesResult(
 	var profiles: List<Profile> = listOf()
-)
+): Result()

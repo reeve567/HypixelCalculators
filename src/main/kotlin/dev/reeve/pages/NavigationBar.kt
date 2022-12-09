@@ -3,7 +3,7 @@ package dev.reeve.pages
 import kotlinx.html.BODY
 import kotlinx.html.STYLE
 
-class NavigationBar: HtmlComponent {
+class NavigationBar: HtmlComponent() {
 	private val title = "Hypixel Calculators"
 	override fun html(body: BODY) = with(body) {
 

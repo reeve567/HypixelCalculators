@@ -5,9 +5,35 @@
 	"type": "object",
 	"properties": {
 		"minions": {
-			"type": "object",
-			"properties": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"drops": {
 
+					},
+					"tiers": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"cooldown": {
+									"type": "integer",
+									"minimum": 1
+								},
+								"storage": {
+									"type": "integer",
+									"enum": [
+										64, 192, 384
+									]
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}

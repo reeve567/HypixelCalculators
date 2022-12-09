@@ -14,23 +14,40 @@ object HypixelAPI {
 		apiKey = key
 	}
 	
-	val items: Items by lazy {
+	val items: ItemsResult by lazy {
 		val request = Request.Builder().url(baseUrl + "resources/skyblock/items").get().build()
 		client.newCall(request).execute().use {
 			if (it.code != 200) return@use
 			
-			return@lazy gson.fromJson(it.body!!.string(), Items::class.java)
+			return@lazy gson.fromJson(it.body!!.string(), ItemsResult::class.java)
 		}
-		return@lazy Items()
+		return@lazy ItemsResult()
 	}
 
-	fun fetchPlayerProfiles(id: String): Profiles {
-		val request = Request.Builder().url(baseUrl + "skyblock/profiles?uuid=$id").get().build()
+	fun fetchPlayerProfiles(id: String): ProfilesResult? {
+		val request = Request.Builder().url(baseUrl + "skyblock/profiles?uuid=$id").get().header("API-Key", apiKey).build()
+		client.newCall(request).execute().use {
+			if (it.code != 200) {
+				println("Error: ${it.code}")
+				println(it.body?.string())
+				return@use
+			}
+			return gson.fromJson(it.body!!.string(), ProfilesResult::class.java)
+		}
+
+		return null
+	}
+
+	fun fetchBazaar(): BazaarResult? {
+		val request = Request.Builder().url(baseUrl + "skyblock/bazaar").get().build()
 		client.newCall(request).execute().use {
 			if (it.code != 200) return@use
-			return gson.fromJson(it.body!!.string(), Profiles::class.java)
+			return gson.fromJson(it.body!!.string(), BazaarResult::class.java)
 		}
-		return Profiles()
+
+		return null
 	}
+
+	// TODO: add election api to reflect prices
 
 }

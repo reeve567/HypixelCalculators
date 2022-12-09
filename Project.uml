@@ -3,97 +3,84 @@
   <ID>JAVA</ID>
   <OriginalElement>dev.reeve.pages.PageBuilder</OriginalElement>
   <nodes>
-    <node x="-128.5" y="749.5">dev.reeve.api.HypixelAPI</node>
-    <node x="-132.5" y="-103.5">dev.reeve.api.IslandMember</node>
-    <node x="388.5" y="-59.5">dev.reeve.api.Profile.Banking</node>
-    <node x="72.0" y="498.5">dev.reeve.api.Profiles</node>
-    <node x="560.0" y="521.0">dev.reeve.pages.HtmlComponent</node>
-    <node x="305.5" y="487.5">dev.reeve.api.Items</node>
-    <node x="148.0" y="-70.5">dev.reeve.api.Profile.CommunityUpgrade</node>
-    <node x="594.5" y="749.5">dev.reeve.pages.Header</node>
-    <node x="426.5" y="749.5">dev.reeve.pages.NavigationBar</node>
-    <node x="126.5" y="185.5">dev.reeve.api.Profile</node>
-    <node x="456.0" y="163.5">dev.reeve.api.Item</node>
-    <node x="153.5" y="749.5">dev.reeve.pages.PageBuilder</node>
+    <node x="-111.5" y="251.5">dev.reeve.api.hypixel.Profile</node>
+    <node x="-146.0" y="613.5">dev.reeve.api.hypixel.Profiles</node>
+    <node x="368.5" y="627.5">dev.reeve.pages.NavigationBar</node>
+    <node x="-152.0" y="847.5">dev.reeve.api.hypixel.HypixelAPI</node>
+    <node x="-150.5" y="-114.5">dev.reeve.api.hypixel.IslandMember</node>
+    <node x="95.5" y="627.5">dev.reeve.pages.PageBuilder</node>
+    <node x="278.0" y="821.0">dev.reeve.api.hypixel.Item</node>
+    <node x="130.5" y="-72.5">dev.reeve.api.hypixel.Profile.CommunityUpgrade</node>
+    <node x="536.5" y="627.5">dev.reeve.pages.Header</node>
+    <node x="371.0" y="-58.5">dev.reeve.api.hypixel.Profile.Banking</node>
+    <node x="562.0" y="322.0">dev.reeve.pages.HtmlComponent</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="dev.reeve.api.Profile.CommunityUpgrade" target="dev.reeve.api.Profile" relationship="INNER_CLASS">
-      <point x="60.0" y="49.5" />
-      <point x="40.0" y="-93.5" />
+    <edge source="dev.reeve.api.hypixel.Profile" target="dev.reeve.api.hypixel.Profile.CommunityUpgrade" relationship="TO_MANY">
+      <point x="-60.0" y="-114.5" />
+      <point x="-18.0" y="146.0" />
+      <point x="187.66666666666669" y="146.0" />
+      <point x="-54.333333333333314" y="58.5" />
     </edge>
     <edge source="dev.reeve.pages.PageBuilder" target="dev.reeve.pages.HtmlComponent" relationship="TO_MANY">
-      <point x="0.0" y="-49.5" />
-      <point x="280.0" y="699.0" />
-      <point x="600.0" y="699.0" />
-      <point x="-40.0" y="38.0" />
+      <point x="0.0" y="-58.5" />
+      <point x="222.0" y="586.0" />
+      <point x="582.0" y="586.0" />
+      <point x="-60.0" y="44.0" />
     </edge>
-    <edge source="dev.reeve.api.Items" target="dev.reeve.api.Item" relationship="TO_MANY">
-      <point x="0.0" y="-71.5" />
-      <point x="420.0" y="459.0" />
-      <point x="620.0" y="459.0" />
-      <point x="0.0" y="115.5" />
+    <edge source="dev.reeve.api.hypixel.Profiles" target="dev.reeve.api.hypixel.Profile" relationship="TO_MANY">
+      <point x="0.0" y="-72.5" />
+      <point x="-80.0" y="114.5" />
     </edge>
-    <edge source="dev.reeve.api.HypixelAPI" target="dev.reeve.api.Profiles" relationship="CREATE">
-      <point x="0.0" y="-49.5" />
-      <point x="0.0" y="719.0" />
-      <point x="180.0" y="719.0" />
-      <point x="0.0" y="60.5" />
+    <edge source="dev.reeve.api.hypixel.Profile" target="dev.reeve.api.hypixel.Profile.Banking" relationship="CREATE">
+      <point x="110.79999999999995" y="-114.5" />
+      <point x="152.79999999999995" y="186.0" />
+      <point x="382.0" y="186.0" />
+      <point x="-60.0" y="44.5" />
     </edge>
-    <edge source="dev.reeve.api.Profile" target="dev.reeve.api.Profile.Banking" relationship="TO_ONE">
-      <point x="-100.0" y="-93.5" />
-      <point x="180.0" y="99.0" />
-      <point x="390.79999999999995" y="99.0" />
-      <point x="-69.20000000000005" y="38.5" />
-    </edge>
-    <edge source="dev.reeve.api.Profile.Banking" target="dev.reeve.api.Profile" relationship="INNER_CLASS">
-      <point x="-64.60000000000002" y="38.5" />
-      <point x="395.4" y="139.0" />
-      <point x="320.0" y="139.0" />
-      <point x="40.0" y="-93.5" />
-    </edge>
-    <edge source="dev.reeve.pages.NavigationBar" target="dev.reeve.pages.HtmlComponent" relationship="REALIZATION">
-      <point x="0.0" y="-49.5" />
-      <point x="500.0" y="719.0" />
-      <point x="680.0" y="719.0" />
-      <point x="40.0" y="38.0" />
+    <edge source="dev.reeve.api.hypixel.Profile" target="dev.reeve.api.hypixel.IslandMember" relationship="TO_MANY">
+      <point x="-60.0" y="-114.5" />
+      <point x="0.0" y="100.5" />
     </edge>
     <edge source="dev.reeve.pages.Header" target="dev.reeve.pages.HtmlComponent" relationship="REALIZATION">
-      <point x="0.0" y="-49.5" />
-      <point x="40.0" y="38.0" />
+      <point x="0.0" y="-58.5" />
+      <point x="-20.0" y="44.0" />
     </edge>
-    <edge source="dev.reeve.api.Profile" target="dev.reeve.api.IslandMember" relationship="TO_MANY">
-      <point x="-100.0" y="-93.5" />
-      <point x="180.0" y="99.0" />
-      <point x="0.0" y="99.0" />
-      <point x="0.0" y="82.5" />
+    <edge source="dev.reeve.api.hypixel.HypixelAPI" target="dev.reeve.api.hypixel.Profiles" relationship="CREATE">
+      <point x="0.0" y="-58.5" />
+      <point x="0.0" y="72.5" />
     </edge>
-    <edge source="dev.reeve.api.Profiles" target="dev.reeve.api.Profile" relationship="TO_MANY">
-      <point x="0.0" y="-60.5" />
-      <point x="-100.0" y="93.5" />
+    <edge source="dev.reeve.api.hypixel.Profile" target="dev.reeve.api.hypixel.Profile.Banking" relationship="TO_ONE">
+      <point x="-60.0" y="-114.5" />
+      <point x="-18.0" y="146.0" />
+      <point x="373.20000000000005" y="146.0" />
+      <point x="-68.79999999999995" y="44.5" />
     </edge>
-    <edge source="dev.reeve.api.HypixelAPI" target="dev.reeve.api.Items" relationship="CREATE">
-      <point x="0.0" y="-49.5" />
-      <point x="0.0" y="719.0" />
-      <point x="180.0" y="719.0" />
-      <point x="180.0" y="679.0" />
-      <point x="420.0" y="679.0" />
-      <point x="0.0" y="71.5" />
+    <edge source="dev.reeve.api.hypixel.Profile.Banking" target="dev.reeve.api.hypixel.Profile" relationship="INNER_CLASS">
+      <point x="-64.39999999999998" y="44.5" />
+      <point x="377.6" y="166.0" />
+      <point x="302.0" y="166.0" />
+      <point x="302.0" y="206.0" />
+      <point x="67.39999999999998" y="206.0" />
+      <point x="25.399999999999977" y="-114.5" />
     </edge>
-    <edge source="dev.reeve.api.Profile" target="dev.reeve.api.Profile.Banking" relationship="CREATE">
-      <point x="100.0" y="-93.5" />
-      <point x="380.0" y="159.0" />
-      <point x="400.0" y="159.0" />
-      <point x="-60.0" y="38.5" />
+    <edge source="dev.reeve.api.hypixel.Profile.CommunityUpgrade" target="dev.reeve.api.hypixel.Profile" relationship="INNER_CLASS">
+      <point x="60.0" y="58.5" />
+      <point x="302.0" y="206.0" />
+      <point x="67.39999999999998" y="206.0" />
+      <point x="25.399999999999977" y="-114.5" />
     </edge>
-    <edge source="dev.reeve.api.Profile" target="dev.reeve.api.Profile.CommunityUpgrade" relationship="TO_MANY">
-      <point x="-100.0" y="-93.5" />
-      <point x="-80.0" y="49.5" />
+    <edge source="dev.reeve.pages.NavigationBar" target="dev.reeve.pages.HtmlComponent" relationship="REALIZATION">
+      <point x="0.0" y="-58.5" />
+      <point x="442.0" y="606.0" />
+      <point x="622.0" y="606.0" />
+      <point x="-20.0" y="44.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Compact" zoom="0.8910585817060637" showDependencies="true" x="335.5" y="581.1113033448673" />
+  <settings layout="Hierarchic Compact" zoom="0.7481818181818182" showDependencies="true" x="442.0" y="963.5" />
   <SelectedNodes>
-    <node>dev.reeve.api.HypixelAPI</node>
+    <node>dev.reeve.api.hypixel.Item</node>
   </SelectedNodes>
   <Categories>
     <Category>Constructors</Category>

@@ -2,6 +2,7 @@ package dev.reeve.api.influx
 
 import com.influxdb.client.InfluxDBClient
 import com.influxdb.client.InfluxDBClientFactory
+import com.influxdb.client.InfluxDBClientOptions
 
 object InfluxAPI: AutoCloseable {
 	private lateinit var client: InfluxDBClient
@@ -12,6 +13,8 @@ object InfluxAPI: AutoCloseable {
 	fun test() {
 		client.queryApi
 	}
+
+
 
 	override fun close() {
 		client.close()

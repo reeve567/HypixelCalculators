@@ -7,7 +7,7 @@ import kotlin.test.Test
 
 class RegexTest {
 	private val regexOutputFolder = File("./regexOutput")
-	private val minionsPage = javaClass.getResource("/minionsPage.html")?.readText() ?: error("Couldn't load resource")
+	private val minionPage = javaClass.getResource("/minionPage.html")?.readText() ?: error("Couldn't load resource")
 
 	init {
 		regexOutputFolder.mkdirs()
@@ -17,7 +17,6 @@ class RegexTest {
 	fun testLinkRegex() {
 		println(RegexLiterals.minionLinkRegex)
 		writeToFile(RegexLiterals::minionLinkRegex)
-
 
 		val group = RegexLiterals.minionLinkRegex.find("""<a href="/wiki/Flower_Minion" title="Flower Minion">Flower</a>""")?.groups?.get("name")
 
@@ -29,9 +28,8 @@ class RegexTest {
 		println(RegexLiterals.minionIdRegex)
 		writeToFile(RegexLiterals::minionIdRegex)
 
-		val group = RegexLiterals.minionIdRegex.find(minionsPage)?.groups?.get("id")
+		val group = RegexLiterals.minionIdRegex.find(minionPage)?.groups?.get("id")
 
-		println(group?.value)
 		assert(group?.value == "GHAST")
 	}
 
@@ -40,8 +38,9 @@ class RegexTest {
 		println(RegexLiterals.minionDropsRegex)
 		writeToFile(RegexLiterals::minionDropsRegex)
 
-		val matches = RegexLiterals.minionDropsRegex.findAll(minionsPage).map { it.groups }
+		val matches = RegexLiterals.minionDropsRegex.findAll(minionPage).map { it.groups }
 
+		println(matches.count())
 		for (match in matches) {
 			println(match)
 		}

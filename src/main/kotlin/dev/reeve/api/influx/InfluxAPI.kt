@@ -14,8 +14,6 @@ object InfluxAPI: AutoCloseable {
 		client.queryApi
 	}
 
-
-
 	override fun close() {
 		client.close()
 	}

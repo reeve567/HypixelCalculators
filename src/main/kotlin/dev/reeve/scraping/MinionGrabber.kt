@@ -9,8 +9,6 @@ class MinionGrabber {
 	private val urlPath = "/wiki/Minions"
 	private val client = OkHttpClient()
 
-
-
 	fun getMinions(): List<Minion> {
 		val request = Request.Builder()
 			.url(baseUrl + urlPath)

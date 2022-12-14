@@ -9,8 +9,9 @@ class PageBuilder {
 	private val html = createHTMLDocument()
 	private val components = mutableListOf<HtmlComponent>()
 
-	fun addComponent(component: HtmlComponent) {
+	fun addComponent(component: HtmlComponent): PageBuilder {
 		components.add(component)
+		return this
 	}
 
 	fun build(): Document {

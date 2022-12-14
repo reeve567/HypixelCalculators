@@ -1,5 +1,7 @@
 # HypixelCalculators
 
+The context of this project
+
 This project is a work progress, it aims to be a utility for finding the best ways to make money and (possibly) get exp, without having to look into recipe.
 
 ## Useful links
@@ -9,6 +11,16 @@ This project is a work progress, it aims to be a utility for finding the best wa
 - [Wiki - Minion - Blaze](https://hypixel-skyblock.fandom.com/wiki/Blaze_Minion)
 - [N8N](https://n8n.reeve.dev/workflow/1)
 - [InfluxDB](https://influx.reeve.dev/orgs/3ae323744d88538e/data-explorer)
+- [Cthulhu - Regex + HTML](https://talbrenev.com/2021/05/26/html-regex.html)
+- [Legendary Regex + HTML SO](https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454)
+
+## Important Notes
+
+I *could* be using a parser instead of regex to get the data for the wiki, but I've used regex before for something similar and it worked really well
+
+The only problem with this one is that it's pretty complex data I'm trying to grab from the wiki, including tables inside of tables, and I don't really want to have to deal with finding the right paths.
+
+JSoup is one such example of a parser I could use, if regex ends up failing me (though it already is with my 500 char regex literals sometimes)
 
 ## Implemented Design patterns
 

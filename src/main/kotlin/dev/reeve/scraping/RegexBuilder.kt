@@ -20,6 +20,7 @@ class RegexBuilder(block: RegexBuilder.() -> Unit = {}) {
 	fun getNamedGroup(name: String, string: String): String {
 		 return "(?<${name}>${string})"
 	}
+
 	fun addNamedGroup(name: String, string: String) {
 		add(getNamedGroup(name, string))
 	}

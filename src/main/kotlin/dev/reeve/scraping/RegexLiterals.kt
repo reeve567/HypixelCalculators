@@ -26,15 +26,15 @@ object RegexLiterals {
 		addWhiteSpaceSelector()
 
 		// they all have this
-		add("""<td colspan="2" class="table-margin-off">""")
+		addNonCapturingGroup("""<td colspan="2" class="table-margin-off">""")
 		addWhiteSpaceSelector()
 
 		// they all have this
-		add("""<table class="wikitable table-margin-off full-width smalltxt">""")
+		addNonCapturingGroup("""<table class="wikitable table-margin-off full-width smalltxt">""")
 		addWhiteSpaceSelector()
-		add("<tbody>")
+		addNonCapturingGroup("<tbody>")
 		addWhiteSpaceSelector()
-		add("""<tr>$whiteSpaceSelector<th colspan="2">From Harvest</th>$whiteSpaceSelector</tr>""")
+		addNonCapturingGroup("""<tr>$whiteSpaceSelector<th colspan="2">From Harvest</th>$whiteSpaceSelector</tr>""")
 		addWhiteSpaceSelector()
 
 		// this is the start of useful information
@@ -54,12 +54,13 @@ object RegexLiterals {
 			}</td>$whiteSpaceSelector</tr>"
 		)
 		addWhiteSpaceSelector()
-		add("</tbody>$whiteSpaceSelector</table>$whiteSpaceSelector</td>")
+		addNonCapturingGroup("</tbody>$whiteSpaceSelector</table>$whiteSpaceSelector</td>")
 
 		addWhiteSpaceSelector()
 		// this next part is just for display on the wiki, it isn't really important
 		// TODO: Figure out why this causes a stack overflow
-		add("""<td>(?:.|\s)+?</td>""")
+		// TODO: switch off of lazy capture groups
+		addNonCapturingGroup("""<td>(?:.|\s)+?</td>""")
 		addWhiteSpaceSelector()
 
 		// drop

@@ -1,5 +1,7 @@
 package dev.reeve.plugins
 
+import dev.reeve.pages.Header
+import dev.reeve.pages.NavigationBar
 import dev.reeve.pages.PageBuilder
 import io.ktor.server.routing.*
 import io.ktor.http.*
@@ -12,7 +14,11 @@ fun Application.configureRouting() {
 	routing {
 		get("/") {
 			call.respondText(
-				PageBuilder().build().textContent
+				PageBuilder()
+					.addComponent(NavigationBar())
+					.addComponent(Header("Home"))
+					.build()
+					.textContent
 			)
 		}
 	}
